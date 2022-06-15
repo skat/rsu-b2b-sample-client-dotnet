@@ -59,8 +59,6 @@ namespace UFSTWSSecuritySample
             using (var client = new HttpClient())
             using (var request = new HttpRequestMessage(HttpMethod.Post, uri))
             {
-                request.Headers.Add("SOAPAction", "getUSKoeretoejDetaljerVis");
-
                 request.Content = new StringContent(envelope, Encoding.UTF8, "text/xml");
 
                 using (var response = client.SendAsync(request).Result)
